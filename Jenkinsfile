@@ -1,7 +1,12 @@
 pipeline {
     agent any
+
+      triggers {
+            pollSCM('* * * * *')
+        }
+
     stages {
-        stage('preperation') {
+        stage('Preperation') {
             steps {
                 git 'https://github.com/thattan79/Pipeline.git'
             }
